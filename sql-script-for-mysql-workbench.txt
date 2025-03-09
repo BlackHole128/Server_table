@@ -1,0 +1,23 @@
+DROP DATABASE server_management;
+CREATE DATABASE server_management;
+USE server_management;
+
+
+-- Main Service Table
+CREATE TABLE services (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    service_name VARCHAR(255) NOT NULL
+);
+
+-- Production & DevUAT Data
+CREATE TABLE server_details (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    service_id INT,
+    type ENUM('Production', 'DevUAT') NOT NULL,
+    purpose VARCHAR(255),
+    cpu INT,
+    memory INT,
+    hdd INT,
+    status VARCHAR(100),
+    FOREIGN KEY (service_id) REFERENCES services(id) ON DELETE CASCADE
+);
