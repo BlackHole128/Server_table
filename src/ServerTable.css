@@ -1,0 +1,82 @@
+/* ✅ Keep container centered and prevent overflow */
+.container {
+    text-align: center;
+    margin: 20px;
+    max-width: 100%;
+    overflow-x: auto;
+    /* Enables horizontal scrolling if table is too wide */
+}
+
+/* ✅ Wrap table inside a scrollable div */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    /* Ensures table does not break layout */
+    margin-bottom: 20px;
+}
+
+/* ✅ Ensure table is responsive */
+.server-table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+    /* Prevents text from wrapping and keeps columns in one line */
+}
+
+/* ✅ Table cell styling */
+.server-table th,
+.server-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+/* ✅ Header row styling */
+.server-table th {
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    /* Keeps headers visible when scrolling */
+}
+
+/* ✅ Buttons styling */
+.add-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-btn:hover {
+    background-color: #218838;
+}
+
+/* ✅ Make input fields inside table cells look better */
+.server-table input {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 14px;
+    box-sizing: border-box;
+    /* Prevents input width issues */
+}
+
+/* ✅ Scrollbar customization (Optional) */
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
