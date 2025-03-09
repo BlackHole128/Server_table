@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// ✅ MySQL Connection
+//  MySQL Connection
 const db = mysql.createConnection({
   host: "localhost",
   user: "root", // Change if needed
@@ -19,11 +19,11 @@ db.connect((err) => {
   if (err) {
     console.error("Database connection failed:", err);
   } else {
-    console.log("✅ Connected to MySQL");
+    console.log(" Connected to MySQL");
   }
 });
 
-// 🔥 Fetch Servers
+//  Fetch Servers
 app.get("/api/servers", (req, res) => {
   db.query(
     `SELECT s.id AS serviceId, s.service_name, d.* 
@@ -71,7 +71,7 @@ app.get("/api/servers", (req, res) => {
   );
 });
 
-// 🔥 Update Data
+//  Update Data
 app.post("/api/update", (req, res) => {
   const updatedData = req.body;
   updatedData.forEach((service) => {
@@ -93,7 +93,7 @@ app.post("/api/update", (req, res) => {
   res.json({ message: "Data Updated Successfully" });
 });
 
-// 🔥 Add New Service
+// Add New Service
 app.post("/api/addService", (req, res) => {
   const { serviceName } = req.body;
   
@@ -118,4 +118,4 @@ app.post("/api/addService", (req, res) => {
   );
 });
 
-app.listen(5000, () => console.log("🔥 Server running on port 5000"));
+app.listen(5000, () => console.log(" Server running on port 5000"));
